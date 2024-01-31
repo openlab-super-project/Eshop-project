@@ -3,6 +3,7 @@ using Eshop_project.Models;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Microsoft.Identity.Client;
 
 namespace Eshop_project.Data
 {
@@ -13,5 +14,7 @@ namespace Eshop_project.Data
         {
 
         }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<ProductsDTO> Products { get; set }
     }
 }
