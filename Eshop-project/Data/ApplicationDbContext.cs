@@ -14,7 +14,6 @@ namespace Eshop_project.Data
         {
 
         }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<ProductsDTO> Products { get; set }
+        public DbSet<ProductsDTO> Products { get; set; }
     }
 }
