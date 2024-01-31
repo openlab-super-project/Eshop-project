@@ -1,6 +1,5 @@
-﻿namespace Eshop_project.ClientApp.src.app
-{
-    public class app
-    {
-    }
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
