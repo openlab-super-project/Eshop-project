@@ -228,7 +228,7 @@ namespace Eshop_project.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Eshop_project.ProductsDTO", b =>
+            modelBuilder.Entity("Eshop_project.Models.ProductsModel", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()

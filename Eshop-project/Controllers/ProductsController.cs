@@ -1,11 +1,6 @@
-﻿using Azure.Core;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Eshop_project;
+﻿using Microsoft.AspNetCore.Mvc;
 using Eshop_project.Data;
 using Eshop_project.Models;
-using System;
-using System.Security.Claims;
 
 namespace Eshop_project.Controllers
 {
@@ -20,10 +15,10 @@ namespace Eshop_project.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("/products")]
         public IEnumerable<ProductsDTO> GetProductInformation() 
         {
-            IEnumerable<ProductsDTO> dbProducts = _context.Products;
+            IEnumerable<ProductsModel> dbProducts = _context.Products;
 
             return dbProducts.Select(dbProducts => new ProductsDTO
             {

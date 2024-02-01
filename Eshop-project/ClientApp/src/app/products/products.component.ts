@@ -1,23 +1,29 @@
-import { Component, NgModule, Inject } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component, OnInit, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
+export class ProductsComponent implements OnInit {
 
-export class ProductsComponent{
+  public productData: ProductsDTO[] = [];
 
-  public ProductData: ProductsDTO[] = [];
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<ProductsDTO[]>(baseUrl + 'products').subscribe(result => {
-      this.ProductData = result;
-    }, error => console.error(error))
+  ngOnInit(): void {
+    this.http.get<ProductsDTO[]>(this.baseUrl + 'products').subscribe(
+      result => {
+        this.productData = result;
+      },
+      error => {
+        console.error(error);
+      }
+    );
   }
-
 }
+
 interface ProductsDTO {
   productId: number;
   productName: string;

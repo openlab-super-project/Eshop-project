@@ -14,6 +14,6 @@ namespace Eshop_project.Data
         {
 
         }
-        public DbSet<ProductsDTO> Products { get; set; }
+        public DbSet<ProductsModel> Products { get; set; }
     }
 }

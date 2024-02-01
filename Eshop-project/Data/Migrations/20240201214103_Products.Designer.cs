@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eshop_project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240131202057_Products")]
+    [Migration("20240201214103_Products")]
     partial class Products
     {
         /// <inheritdoc />
@@ -231,7 +231,7 @@ namespace Eshop_project.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Eshop_project.ProductsDTO", b =>
+            modelBuilder.Entity("Eshop_project.Models.ProductsModel", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
