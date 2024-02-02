@@ -15,7 +15,7 @@ namespace Eshop_project.Controllers
             _context = context;
         }
 
-        [HttpGet("/products")]
+        [HttpGet("products")]
         public IEnumerable<ProductsDTO> GetProductInformation() 
         {
             IEnumerable<ProductsModel> dbProducts = _context.Products;
