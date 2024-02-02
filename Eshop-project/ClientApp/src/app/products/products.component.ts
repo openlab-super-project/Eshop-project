@@ -6,21 +6,14 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
 
   public productData: ProductsDTO[] = [];
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
-
-  ngOnInit(): void {
-    this.http.get<ProductsDTO[]>(this.baseUrl + 'products').subscribe(
-      result => {
-        this.productData = result;
-      },
-      error => {
-        console.error(error);
-      }
-    );
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    http.get<ProductsDTO[]>(baseUrl + 'products').subscribe(result => {
+      this.productData = result;
+    }, error => console.error(error));
   }
 }
 

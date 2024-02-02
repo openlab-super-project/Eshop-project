@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Eshop_project.Data;
+﻿using Eshop_project.Data;
 using Eshop_project.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Eshop_project.Controllers
 {
@@ -15,8 +15,9 @@ namespace Eshop_project.Controllers
             _context = context;
         }
 
-        [HttpGet("products")]
-        public IEnumerable<ProductsDTO> GetProductInformation() 
+        [HttpGet]
+        [Route("products")]
+        public IEnumerable<ProductsDTO> GetProductInformation()
         {
             IEnumerable<ProductsModel> dbProducts = _context.Products;
 
@@ -27,11 +28,10 @@ namespace Eshop_project.Controllers
                 ProductDescription = dbProducts.ProductDescription,
                 Price = dbProducts.Price,
                 ProductCategory = dbProducts.ProductCategory,
-                ProductImage0= dbProducts.ProductImage0,
-                ProductImage1= dbProducts.ProductImage1,
-                ProductImage2= dbProducts.ProductImage2,
+                ProductImage0 = dbProducts.ProductImage0,
+                ProductImage1 = dbProducts.ProductImage1,
+                ProductImage2 = dbProducts.ProductImage2,
             });
         }
     }
 }
-
