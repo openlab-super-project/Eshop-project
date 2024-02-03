@@ -1,12 +1,12 @@
-﻿using Eshop_project.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using Eshop_project.Data;
 using Eshop_project.Models;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Eshop_project.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductsController : Controller
+    public class ProductsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
@@ -16,7 +16,6 @@ namespace Eshop_project.Controllers
         }
 
         [HttpGet]
-        [Route("products")]
         public IEnumerable<ProductsDTO> GetProductInformation()
         {
             IEnumerable<ProductsModel> dbProducts = _context.Products;

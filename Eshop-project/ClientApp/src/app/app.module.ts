@@ -34,7 +34,8 @@ import { CommonModule } from '@angular/common';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      { path: 'products', component: ProductsComponent}
+      { path: 'products', component: ProductsComponent },
+      { path: '', redirectTo: '/products', pathMatch: 'full' }
     ])
   ],
   providers: [
