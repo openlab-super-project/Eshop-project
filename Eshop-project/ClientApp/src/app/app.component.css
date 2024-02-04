@@ -33,10 +33,10 @@ h2 {
   margin-bottom: 5px;
   width: auto;
 }
- .ending a:hover {
-    text-decoration: underline;
-    color: white;
-    cursor: pointer;
+.ending a:hover {
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
  }
 .shop, .brands, .get_help, .contact {
   border-right: 1px solid #ccc;
