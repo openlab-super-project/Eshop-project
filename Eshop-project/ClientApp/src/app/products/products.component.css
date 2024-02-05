@@ -34,3 +34,36 @@
 .telescope_1 p:first-child {
   font-weight: bold;
 }
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery{
+    width: 70vw;
+}
+.search-triedicka{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-bar{
+    padding: 6px 40px;
+    border-radius: 10px;
+}
+.search {
+  margin-right: 20px;
+}
+.sort {
+  margin-left: 20px;
+  padding: 6px 30px;
+  border-radius: 10px;
+}
+.sort option{
+    padding: 6px 30px;
+}
+.primary {
+  padding: 6px 30px;
+  border-radius: 10px;
+}
+

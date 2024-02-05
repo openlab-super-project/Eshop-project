@@ -5,27 +5,31 @@
   top: 0;
   left: 0;
 }
+
 .ending {
   background-color: #262626;
   height: auto;
-  width: 100vw;
+  width: 100%;
 }
 .terms {
   display: flex;
-  justify-content: center; 
+  flex-wrap: wrap; 
+  justify-content: center;
   margin-top: 20px;
 }
 .terms > div {
   flex: 1;
   margin: 0 10px;
-  text-align: center; 
+  text-align: center;
 }
+
 h2 {
   color: red;
   font-size: 1.5rem;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
+
 .ending a {
   color: white;
   font-size: 1.2rem;
@@ -37,7 +41,7 @@ h2 {
   text-decoration: underline;
   color: white;
   cursor: pointer;
- }
+}
 .shop, .brands, .get_help, .contact {
   border-right: 1px solid #ccc;
   padding-right: 20px;
@@ -47,20 +51,31 @@ h2 {
 }
 .payments_end {
   display: flex;
+  flex-wrap: wrap; 
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   padding: 20px 0;
 }
-.first,
-.second, .third {
+.first, .second, .third {
   flex: 1;
-  text-align: center; 
+  text-align: center;
 }
 .first p {
-  margin: 5px 0;
-  color: white;
-}
+    margin: 5px 0;
+    color: white;
+  }
 .second, .third img {
-  max-width: 100%; 
-  height: auto;
+    max-width: 100%;
+    height: auto; 
+  }
+@media (max-width: 768px) {
+  .terms > div {
+    flex: 1 0 100%; 
+    margin-bottom: 10px; 
+  }
+  .shop, .brands, .get_help, .contact {
+    border-right: none; 
+    padding-right: 0; 
+    margin-bottom: 10px; 
+  }
 }

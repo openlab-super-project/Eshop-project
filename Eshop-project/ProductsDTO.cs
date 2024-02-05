@@ -12,5 +12,6 @@ namespace Eshop_project
         public string? ProductImage0 { get; set; }
         public string? ProductImage1 { get; set; }
         public string? ProductImage2 { get; set; }
+
     }
 }

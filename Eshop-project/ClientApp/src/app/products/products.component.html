@@ -1,16 +1,31 @@
-<div class="page">
-  <div class="content">
-    <div class="products"><br /><br /><br />
+<div class="content">
+  <div class="products">
+    <div class="product-side">
+      <br /><br /><br /><br />
       <h1 style="text-align: center;"><b>Products</b></h1><br />
+      <div class="search-triedicka">
+        <div class="search">
+          <input class="search-bar" [(ngModel)]="searchText" type="search" placeholder="Search product">
+          <button class="primary" type="button"><p style="margin: 0; padding: 0;"><img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png" height="21" width="21" /></p></button>
+        </div>
+        <div class="select">
+          <select class="sort">
+            <option value="Best seller">Best seller</option>
+            <option value="From the most expensive">From the most expensive</option>
+            <option value="From the least expensive">From the least expensive</option>
+          </select>
+        </div>
+      </div><br />
       <div class="gallery">
-        <ng-container *ngFor="let product of productData">
+        <ng-container *ngFor="let product of productData | search: searchText">
           <div class="telescope_1">
             <img [src]="product.productImage0" alt="Telescope + product.productId">
             <p>{{ product.productName }}</p>
             <p>{{ product.price }}€</p>
           </div>
         </ng-container>
-      </div><br /><br /><br /><br />
+      </div>
+      <br /><br /><br /><br />
     </div>
   </div>
 </div>
