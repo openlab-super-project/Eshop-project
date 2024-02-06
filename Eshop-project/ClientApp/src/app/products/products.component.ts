@@ -22,7 +22,7 @@ export class ProductsComponent {
 
 }
 
-interface ProductsDTO {
+export interface ProductsDTO {
   productId: number;
   productName: string;
   productDescription: string;
