@@ -20,6 +20,21 @@ export class ProductsComponent {
     }, error => console.error(error));
   }
 
+  sortDataFirst() {
+    this.productData.sort((a, b) => b.price - a.price); // from most expensive
+  }
+
+  sortDataSecond() {
+    this.productData.sort((a, b) => a.price - b.price); // from least expensive
+  }
+  onSortChange(event: any) {
+    const selectedValue = event.target.value;
+    if (selectedValue === 'mostExpensive') {
+      this.sortDataFirst();
+    } else if (selectedValue === 'leastExpensive') {
+      this.sortDataSecond();
+    }
+  }
 }
 
 export interface ProductsDTO {
@@ -31,4 +46,5 @@ export interface ProductsDTO {
   productImage0: string;
   productImage1: string;
   productImage2: string;
+  quantity: number;
 }

@@ -9,10 +9,10 @@
           <button class="primary" type="button"><p style="margin: 0; padding: 0;"><img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png" height="21" width="21" /></p></button>
         </div>
         <div class="select">
-          <select class="sort">
+          <select class="sort" (change)="onSortChange($event)">
             <option value="Best seller">Best seller</option>
-            <option value="From the most expensive">From the most expensive</option>
-            <option value="From the least expensive">From the least expensive</option>
+            <option value="mostExpensive">From the most expensive</option>
+            <option value="leastExpensive">From the least expensive</option>
           </select>
         </div>
       </div><br />
@@ -25,7 +25,9 @@
           </div>
         </ng-container>
       </div>
-      <br /><br /><br /><br />
-    </div>
+      <div class="end">
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </div>
+     </div>
   </div>
 </div>
