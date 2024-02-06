@@ -74,7 +74,7 @@
   text-align: center;
   transition: transform 0.3s ease;
   width: 250px; 
-  height: 300px;
+  height: 350px;
   border-radius: 10px;
 }
 .telescope_1:hover {
@@ -91,6 +91,7 @@
 }
 .telescope_1 p:first-child {
   font-weight: bold;
+  color: black;
 }
 .top-brands {
   width: 100vw; 
@@ -148,4 +149,15 @@ hr{
     width: 100%; 
     max-width: 200px; 
   }
+}
+.check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.available {
+  color: green;
+}
+.unavailable {
+  color: red;
 }

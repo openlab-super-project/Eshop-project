@@ -1,7 +1,7 @@
 <div class="content">
   <div class="products">
     <div class="product-side">
-      <br /><br /><br /><br />
+      <br /><br /><br /><br /><br />
       <h1 style="text-align: center;"><b>Products</b></h1><br />
       <div class="search-triedicka">
         <div class="search">
@@ -10,7 +10,7 @@
         </div>
         <div class="select">
           <select class="sort" (change)="onSortChange($event)">
-            <option value="Best seller">Best seller</option>
+            <option value="Best seller">Best seller (not working)</option> <!--Tu treba dorobiť , budto tie ktore su na sklade alebo to nechat tak-->
             <option value="mostExpensive">From the most expensive</option>
             <option value="leastExpensive">From the least expensive</option>
           </select>
@@ -19,9 +19,14 @@
       <div class="gallery">
         <ng-container *ngFor="let product of productData | search: searchText">
           <div class="telescope_1">
-            <img [src]="product.productImage0" alt="Telescope + product.productId">
-            <p>{{ product.productName }}</p>
-            <p>{{ product.price }}€</p>
+            <div class="names">
+              <img [src]="product.productImage0" alt="Telescope + product.productId">
+              <p>{{ product.productName }}</p>
+            </div>
+            <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
+              <p>{{ product.price }}€</p>
+              <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
+            </div>
           </div>
         </ng-container>
       </div>

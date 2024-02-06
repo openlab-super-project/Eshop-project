@@ -30,4 +30,5 @@ interface HomeProductsDTO {
   productImage0: string;
   productImage1: string;
   productImage2: string;
+  quantity: number;
 }

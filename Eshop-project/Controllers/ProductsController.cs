@@ -30,6 +30,7 @@ namespace Eshop_project.Controllers
                 ProductImage0 = dbProducts.ProductImage0,
                 ProductImage1 = dbProducts.ProductImage1,
                 ProductImage2 = dbProducts.ProductImage2,
+                Quantity = dbProducts.Quantity,
             });
         }
     }

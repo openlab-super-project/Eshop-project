@@ -16,7 +16,10 @@
           <div *ngIf="product.productCategory === 'TELE'" class="telescope_1">
             <img [src]="product.productImage0" alt="Telescope  + product.productId">
             <p>{{product.productName }}</p>
-            <p>{{product.price}}€</p>
+            <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
+              <p>{{ product.price }}€</p>
+              <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
+            </div>
           </div>
         </ng-container>
       </div>
@@ -28,7 +31,10 @@
           <div *ngIf="product.productCategory === 'MONT'" class="telescope_1">
             <img [src]="product.productImage0" alt="Telescope + product.productId">
             <p>{{ product.productName }}</p>
-            <p>{{ product.price }}€</p>
+            <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
+              <p>{{ product.price }}€</p>
+              <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
+            </div>
           </div>
         </ng-container>
       </div>
@@ -40,7 +46,10 @@
           <div *ngIf="product.productCategory === 'OTHR'" class="telescope_1">
             <img [src]="product.productImage0" alt="Telescope  + product.productId">
             <p>{{product.productName }}</p>
-            <p>{{product.price}}€</p>
+            <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
+              <p>{{ product.price }}€</p>
+              <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
+            </div>
           </div>
         </ng-container>
       </div>
