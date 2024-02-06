@@ -1,15 +1,15 @@
-.content{
-    width: 100%;
+.content {
+  width: 100vw;
 }
 .title {
-  background-image: url(https://i.pinimg.com/originals/bd/96/d3/bd96d3413727f3801550c58cbda9ba17.jpg);
-  background-size: cover;
+  background-image: url(https://assets.newatlas.com/dims4/default/900ec1c/2147483647/strip/true/crop/2000x1333+0+0/resize/1200x800!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Fa0%2F2f%2F999ade75433b8cc2f7bb70678395%2F01.jpg);
+  background-size:cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position:center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 700px;
   color: white;
   text-align: center;
   width: 100vw;

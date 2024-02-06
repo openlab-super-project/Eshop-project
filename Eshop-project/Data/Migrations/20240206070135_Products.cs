@@ -19,10 +19,11 @@ namespace Eshop_project.Data.Migrations
                     ProductName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductCategory = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Price = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<float>(type: "real", nullable: false),
                     ProductImage0 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ProductImage1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductImage2 = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ProductImage2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
