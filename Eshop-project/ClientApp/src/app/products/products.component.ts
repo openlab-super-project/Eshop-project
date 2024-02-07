@@ -14,8 +14,8 @@ export class ProductsComponent {
 
   searchText: any;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<ProductsDTO[]>(baseUrl + 'products').subscribe(result => {
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+    this.http.get<ProductsDTO[]>(this.baseUrl + 'products').subscribe(result => {
       this.productData = result;
     }, error => console.error(error));
   }
@@ -27,12 +27,20 @@ export class ProductsComponent {
   sortDataSecond() {
     this.productData.sort((a, b) => a.price - b.price); // from least expensive
   }
+
+  showAvaiableProducts() {
+    this.ourFilteredProducts = this.productData.filter(product => product.quantity > 0); // musime TOTO OPRAVIT ZAJTRA 
+  }
+
   onSortChange(event: any) {
     const selectedValue = event.target.value;
     if (selectedValue === 'mostExpensive') {
       this.sortDataFirst();
     } else if (selectedValue === 'leastExpensive') {
       this.sortDataSecond();
+    }
+    else if (selectedValue === 'isAvailable') {
+      this.showAvaiableProducts();
     }
   }
 }
