@@ -13,10 +13,10 @@
       <h3>Telescopes</h3><br />
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br />
       <div class="gallery">
-        <ng-container *ngFor="let product of productData">
+        <ng-container *ngFor="let product of productData.slice(0, 4)">
           <div *ngIf="product.productCategory === 'TELE'" class="telescope_1">
-            <img [src]="product.productImage0" alt="Telescope  + product.productId">
-            <p>{{product.productName }}</p>
+            <img [src]="product.productImage0" alt="Telescope {{ product.productId }}">
+            <p>{{ product.productName }}</p>
             <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
               <p>{{ product.price }}€</p>
               <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
@@ -28,9 +28,9 @@
       <h3>Tracking mounts</h3><br />
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br />
       <div class="gallery">
-        <ng-container *ngFor="let product of productData">
+        <ng-container *ngFor="let product of productData.slice(4, 8)">
           <div *ngIf="product.productCategory === 'MONT'" class="telescope_1">
-            <img [src]="product.productImage0" alt="Telescope + product.productId">
+            <img [src]="product.productImage0" alt="Mount + {{product.productId}}">
             <p>{{ product.productName }}</p>
             <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
               <p>{{ product.price }}€</p>
@@ -43,9 +43,9 @@
       <h3>Other equimpment</h3><br />
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br />
       <div class="gallery">
-        <ng-container *ngFor="let product of productData">
+        <ng-container *ngFor="let product of productData.slice(8, 12)">
           <div *ngIf="product.productCategory === 'OTHR'" class="telescope_1">
-            <img [src]="product.productImage0" alt="Telescope  + product.productId">
+            <img [src]="product.productImage0" alt="Others + {{product.productId}}">
             <p>{{product.productName }}</p>
             <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
               <p>{{ product.price }}€</p>
