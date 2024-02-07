@@ -28,9 +28,9 @@ export class ProductsComponent {
     this.productData.sort((a, b) => a.price - b.price); // from least expensive
   }
 
-  showAvaiableProducts() {
+  /*showAvaiableProducts() {
     this.ourFilteredProducts = this.productData.filter(product => product.quantity > 0); // musime TOTO OPRAVIT ZAJTRA 
-  }
+  }*/
 
   onSortChange(event: any) {
     const selectedValue = event.target.value;
@@ -39,9 +39,9 @@ export class ProductsComponent {
     } else if (selectedValue === 'leastExpensive') {
       this.sortDataSecond();
     }
-    else if (selectedValue === 'isAvailable') {
+    /*else if (selectedValue === 'isAvailable') {
       this.showAvaiableProducts();
-    }
+    }*/
   }
 }
 
