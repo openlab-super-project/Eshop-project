@@ -35,6 +35,11 @@ export class ProductsComponent {
     this.ourFilteredProducts = this.productData.filter(product => product.quantity > 0); // musime TOTO OPRAVIT ZAJTRA 
   }
 
+  showAllProducts() {
+    this.ourFilteredProducts = this.productData;
+    this.ourFilteredProducts.sort((a, b) => a.productId - b.productId);
+  }
+
   onSortChange(event: any) {
     const selectedValue = event.target.value;
     if (selectedValue === 'mostExpensive') {
@@ -44,6 +49,9 @@ export class ProductsComponent {
     }
     else if (selectedValue === 'isAvailable') {
       this.showAvaiableProducts();
+    }
+    else if (selectedValue === 'all') {
+      this.showAllProducts();
     }
   }
 }
