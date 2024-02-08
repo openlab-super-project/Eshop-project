@@ -11,6 +11,7 @@
         </div>
         <div class="select">
           <select class="sort" (change)="onSortChange($event)">
+            <option value="" selected disabled>Select</option>
             <option value="isAvailable">Are available</option> <!--Zatial takto , keby tak tak to zmenit na best seller alebo best seller pridat dotatocne-->
             <option value="mostExpensive">From the most expensive</option>
             <option value="leastExpensive">From the least expensive</option>
@@ -18,7 +19,7 @@
         </div>
       </div><br />
       <div class="gallery">
-        <ng-container *ngFor="let product of productData | search: searchText">
+        <ng-container *ngFor="let product of ourFilteredProducts | search: searchText">
           <div class="telescope_1">
             <div class="names">
               <img [src]="product.productImage0" alt="Telescope + product.productId">
