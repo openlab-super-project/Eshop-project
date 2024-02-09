@@ -1,40 +1,49 @@
 <title>Products</title>
 <div class="content">
-  <div class="products">
-    <div class="product-side">
-      <br /><br /><br /><br /><br />
-      <h1 style="text-align: center;"><b>Products</b></h1><br />
-      <div class="search-triedicka">
-        <div class="search">
-          <input class="search-bar" [(ngModel)]="searchText" type="search" placeholder="Search product">
-          <button class="primary" type="button"><p style="margin: 0; padding: 0;"><img src="https://cdn3.iconfinder.com/data/icons/feather-5/24/search-512.png" height="21" width="21" style="margin-bottom: 2px;"/></p></button>
-        </div>
-        <div class="select">
-          <select class="sort" (change)="onSortChange($event)">
-            <option value="all">All products</option>
-            <option value="isAvailable">Are available</option> <!--Zatial takto , keby tak tak to zmenit na best seller alebo best seller pridat dotatocne-->
-            <option value="mostExpensive">From the most expensive</option>
-            <option value="leastExpensive">From the least expensive</option>
-          </select>
-        </div>
-      </div><br />
-      <div class="gallery">
-        <ng-container *ngFor="let product of ourFilteredProducts | search: searchText">
-          <div class="telescope_1">
-            <div class="names">
-              <img [src]="product.productImage0" alt="Telescope + product.productId">
-              <p>{{ product.productName }}</p>
+    <div class="left-panel"><br /><br /><br />        
+        <h1 style="margin: 10px; font-weight: bold;">Categories</h1><br />
+        <ul class="category-list">
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2991/2991566.png" height="30" width="30" alt="telescope" /> Telescopes</a></li> <!--X je default na homepage-->
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3814/3814739.png" height="30" width="30" alt="mount" /> Mounts</a></li> <!--Ked tak pridat sem iny obrazok-->
+            <li><a href="#"><img src="https://www.freeiconspng.com/thumbs/filter-icon/filter-icon-30.png" height="30" width="30" alt="filters"/> Filters</a></li>
+            <li><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2972/2972087.png" height="30" width="30" alt="refractor" /> Refractors</a></li>
+        </ul>
+    </div>
+    <div class="products">
+        <div class="product-side">
+            <br /><br /><br /><br /><br />
+            <h1 style="text-align: center;"><b>Products</b></h1><br />
+            <div class="search-triedicka">
+                <div class="search">
+                    <input class="search-bar" [(ngModel)]="searchText" type="search" placeholder="Search product">
+                    <button class="primary" type="button"><p style="margin: 0; padding: 0;"><img src="https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-5.png" height="21" width="21" style="margin-bottom: 2px;" alt="search-icon"/></p></button>
+                </div>
+                <div class="select">
+                    <select class="sort" (change)="onSortChange($event)">
+                        <option value="all">All products</option>
+                        <option value="isAvailable">Are available</option> <!--Zatial takto , keby tak tak to zmenit na best seller alebo best seller pridat dotatocne-->
+                        <option value="mostExpensive">From the most expensive</option>
+                        <option value="leastExpensive">From the least expensive</option>
+                    </select>
+                </div>
+            </div><br />
+            <div class="gallery">
+                <ng-container *ngFor="let product of ourFilteredProducts | search: searchText">
+                    <div class="telescope_1">
+                        <div class="names">
+                            <img [src]="product.productImage0" alt="Telescope + product.productId">
+                            <p>{{ product.productName }}</p>
+                        </div>
+                        <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
+                            <p>{{ product.price }}€</p>
+                            <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
+                        </div>
+                    </div>
+                </ng-container>
             </div>
-            <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
-              <p>{{ product.price }}€</p>
-              <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
+            <div class="end">
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </div>
-          </div>
-        </ng-container>
-      </div>
-      <div class="end">
-        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-      </div>
-     </div>
-  </div>
+        </div>
+    </div>
 </div>

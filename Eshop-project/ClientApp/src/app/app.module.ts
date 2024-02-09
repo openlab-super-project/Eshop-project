@@ -16,6 +16,7 @@ import { ProductsComponent } from './products/products.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPipe } from './products/search.pipe';
+import { ProductsDetailComponent } from './products-detail/products-detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchPipe } from './products/search.pipe';
     CounterComponent,
     FetchDataComponent,
     ProductsComponent,
-    SearchPipe
+    SearchPipe,
+    ProductsDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
