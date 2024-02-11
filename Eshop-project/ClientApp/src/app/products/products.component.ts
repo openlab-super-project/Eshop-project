@@ -21,6 +21,14 @@ export class ProductsComponent {
     }, error => console.error(error));
   }
 
+  //PANEL CATEGORIES
+
+  filterProducts(category: string) {
+    this.ourFilteredProducts = this.productData;
+    this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category);
+  }
+
+  // TRIEDICKA
   sortDataFirst() {
     this.ourFilteredProducts = this.productData;
     this.ourFilteredProducts.sort((a, b) => b.price - a.price); // from most expensive
