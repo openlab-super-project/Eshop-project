@@ -1,6 +1,5 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { SearchPipe } from './search.pipe';
 
 @Component({
   selector: 'app-products',
@@ -22,7 +21,6 @@ export class ProductsComponent {
   }
 
   //PANEL CATEGORIES
-
   filterProducts(category: string) {
     this.ourFilteredProducts = this.productData;
     this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category); // for each cateogory

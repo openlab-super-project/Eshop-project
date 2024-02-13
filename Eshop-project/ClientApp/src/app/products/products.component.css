@@ -63,10 +63,6 @@
 .sort option{
     padding: 6px 30px;
 }
-/*.primary {
-  padding: 6px 30px;
-  border-radius: 10px;
-}*/
 .available {
   color: green; 
 }
@@ -110,13 +106,23 @@
   grid-template-columns: 350px 1fr; /*350px prva column, 1fr druha*/
   gap: 0px;
 }
+.menu-icon{
+    margin-top: 5px;
+    border: none;
+    background-color: transparent;
+}
+.panel-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 @media screen and (max-width: 1180px) {
   .left-panel {
     display: none;
   }
   .content {
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
