@@ -25,7 +25,7 @@ export class ProductsComponent {
 
   filterProducts(category: string) {
     this.ourFilteredProducts = this.productData;
-    this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category);
+    this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category); // for each cateogory
   }
 
   // TRIEDICKA
@@ -40,14 +40,23 @@ export class ProductsComponent {
   }
 
   showAvaiableProducts() {
-    this.ourFilteredProducts = this.productData.filter(product => product.quantity > 0); // musime TOTO OPRAVIT ZAJTRA 
+    this.ourFilteredProducts = this.productData.filter(product => product.quantity > 0); // are available
   }
 
   showAllProducts() {
     this.ourFilteredProducts = this.productData;
-    this.ourFilteredProducts.sort((a, b) => a.productId - b.productId);
+    this.ourFilteredProducts.sort((a, b) => a.productId - b.productId); // show all products
   }
 
+  filtersProducts() {
+    if (!this.searchText.trim()) {
+      this.ourFilteredProducts = this.productData;
+    } else {
+      this.ourFilteredProducts = this.productData.filter(product =>
+        product.productName.toLowerCase().includes(this.searchText.toLowerCase())
+      );
+    }
+  }
   onSortChange(event: any) {
     const selectedValue = event.target.value;
     if (selectedValue === 'mostExpensive') {
