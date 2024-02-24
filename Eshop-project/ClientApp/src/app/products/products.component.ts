@@ -70,7 +70,6 @@ export class ProductsComponent {
     }
   }
 }
-
 export interface ProductsDTO {
   productId: number;
   productName: string;

@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 700px;
+  height: 600px;
   color: white;
   text-align: center;
   width: 100vw;
@@ -67,7 +67,6 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .telescope_1 {
   border: 1px solid #ddd;
   padding: 15px;

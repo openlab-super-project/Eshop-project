@@ -16,8 +16,10 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
-nav{
-    position: fixed;
-    width: 100vw;
-    z-index: 2;
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 2;
 }
