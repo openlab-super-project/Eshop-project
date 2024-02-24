@@ -17,9 +17,16 @@ html {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  width: 100vw;
-  z-index: 2;
+  z-index: 1000;
+}
+.fixed{
+    position: fixed;
+    width: 100vw;
+    transition: 0.5s linear;
+    top: 0;
+}
+.unfixed{
+    position: static;
+    transition: 0.5s linear;
+    top: -50px;
 }

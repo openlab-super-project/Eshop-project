@@ -1,6 +1,6 @@
 <header>
   <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow"
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'"
   >
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/']"><span><img src="https://static.thenounproject.com/png/129365-200.png" height="45" width="45"/></span> Astroshop</a>
