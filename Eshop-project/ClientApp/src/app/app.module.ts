@@ -7,8 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
@@ -17,14 +15,13 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPipe } from './products/search.pipe';
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     ProductsComponent,
     SearchPipe,
     ProductsDetailComponent
@@ -37,10 +34,10 @@ import { ProductsDetailComponent } from './products-detail/products-detail.compo
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'products', component: ProductsComponent },
-      { path: '', redirectTo: '/products', pathMatch: 'full' }
+      { path: '', redirectTo: '/products', pathMatch: 'full' },
+      { path: 'contact', component: ContactPageComponent },
+      { path: '', redirectTo: '/contact', pathMatch: 'full' }
     ])
   ],
   providers: [
