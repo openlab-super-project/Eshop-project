@@ -25,28 +25,23 @@ export class ProductsComponent {
     this.ourFilteredProducts = this.productData;
     this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category); // for each cateogory
   }
-
   // TRIEDICKA
   sortDataFirst() {
     this.ourFilteredProducts = this.productData;
     this.ourFilteredProducts.sort((a, b) => b.price - a.price); // from most expensive
   }
-
   sortDataSecond() {
     this.ourFilteredProducts = this.productData;
     this.ourFilteredProducts.sort((a, b) => a.price - b.price); // from least expensive
   }
-
   showAvaiableProducts() {
     this.ourFilteredProducts = this.productData.filter(product => product.quantity > 0); // are available
   }
-
   showAllProducts() {
     this.ourFilteredProducts = this.productData;
     this.ourFilteredProducts.sort((a, b) => a.productId - b.productId); // show all products
   }
-
-  filtersProducts() {
+  filtersProducts() { // pre searchbar
     if (!this.searchText.trim()) {
       this.ourFilteredProducts = this.productData;
     } else {

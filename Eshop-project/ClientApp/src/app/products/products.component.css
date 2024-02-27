@@ -42,6 +42,7 @@
 }
 .gallery{
     width: 70vw;
+    padding-bottom: 200px;
 }
 .search-triedicka{
     display: flex;

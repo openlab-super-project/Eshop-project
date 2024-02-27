@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +17,7 @@ export class HomeComponent {
       this.productData = result;
     }, error => console.error(error));
   }
+
   shopNow() {
     this.router.navigate(['/products']);
   }
