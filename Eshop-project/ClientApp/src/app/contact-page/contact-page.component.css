@@ -9,10 +9,15 @@
 }
 .contact-form{
     padding-top: 50px;
-    padding-bottom: 200px;
+    padding-bottom: 300px;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+button {
+  padding: 8px 18px;
+  margin: 10px;
+  border-radius: 15px;
 }

@@ -32,8 +32,10 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     FormsModule,
     CommonModule,
     ApiAuthorizationModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'home', component: HomeComponent},
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'products', component: ProductsComponent },
       { path: '', redirectTo: '/products', pathMatch: 'full' },
       { path: 'contact', component: ContactPageComponent },
