@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
-
   public productData: ProductsDTO[] = [];
   public ourFilteredProducts: ProductsDTO[] = [];
 
@@ -16,33 +15,20 @@ export class ProductsComponent {
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
     this.http.get<ProductsDTO[]>(this.baseUrl + 'products').subscribe(result => {
       this.productData = result;
-      this.ourFilteredProducts = this.productData;
+      this.filtersProducts();
     }, error => console.error(error));
   }
 
-  //PANEL CATEGORIES
   filterProducts(category: string) {
-    this.ourFilteredProducts = this.productData;
-    this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category); // for each cateogory
+    this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category);
   }
-  // TRIEDICKA
-  sortDataFirst() {
-    this.ourFilteredProducts = this.productData;
-    this.ourFilteredProducts.sort((a, b) => b.price - a.price); // from most expensive
-  }
-  sortDataSecond() {
-    this.ourFilteredProducts = this.productData;
-    this.ourFilteredProducts.sort((a, b) => a.price - b.price); // from least expensive
-  }
-  showAvaiableProducts() {
-    this.ourFilteredProducts = this.productData.filter(product => product.quantity > 0); // are available
-  }
+
   showAllProducts() {
     this.ourFilteredProducts = this.productData;
-    this.ourFilteredProducts.sort((a, b) => a.productId - b.productId); // show all products
   }
-  filtersProducts() { // pre searchbar
-    if (!this.searchText.trim()) {
+
+  filtersProducts() {
+    if (!this.searchText) {
       this.ourFilteredProducts = this.productData;
     } else {
       this.ourFilteredProducts = this.productData.filter(product =>
@@ -50,21 +36,38 @@ export class ProductsComponent {
       );
     }
   }
+
+  onSearchChange() {
+    this.filtersProducts();
+  }
+
   onSortChange(event: any) {
     const selectedValue = event.target.value;
     if (selectedValue === 'mostExpensive') {
-      this.sortDataFirst();
+      this.sortData('mexp');
     } else if (selectedValue === 'leastExpensive') {
-      this.sortDataSecond();
+      this.sortData('lexp');
+    } else if (selectedValue === 'isAvailable') {
+      this.sortData('isa');
+    } else if (selectedValue === 'all') {
+      this.sortData('asa');
     }
-    else if (selectedValue === 'isAvailable') {
-      this.showAvaiableProducts();
-    }
-    else if (selectedValue === 'all') {
+    // tu ked tak pridat ostatne sorting
+  }
+
+  private sortData(order: string) {
+    if (order === 'lexp') {
+      this.ourFilteredProducts.sort((a, b) => a.price - b.price);
+    } else if (order === 'mexp') {
+      this.ourFilteredProducts.sort((a, b) => b.price - a.price);
+    } else if (order === 'isa') {
+      this.ourFilteredProducts = this.ourFilteredProducts.filter(product => product.quantity > 0);
+    } else if (order === 'asa') {
       this.showAllProducts();
     }
   }
 }
+
 export interface ProductsDTO {
   productId: number;
   productName: string;
