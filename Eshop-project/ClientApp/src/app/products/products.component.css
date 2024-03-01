@@ -126,4 +126,11 @@
     justify-content: center;
     align-items: center;
   }
+  .search-triedicka{
+      flex-direction: column;
+  }
+  .sort{
+      margin-right: 41px;
+      margin-top: 10px;
+  }
 }

@@ -142,13 +142,12 @@ button {
     margin-right: 10px;
     text-align: left;
   }
+  .gallery1 {
+    justify-content: space-around;
+  }
 }
 @media (max-width: 576px) {
   .title {
     height: 500px; 
-  }
-  .gallery1 img {
-    width: 100%; 
-    max-width: 200px; 
   }
 }
