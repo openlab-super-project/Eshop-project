@@ -34,12 +34,12 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     ApiAuthorizationModule,
     BrowserAnimationsModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent},
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
       { path: 'products', component: ProductsComponent },
-      { path: '', redirectTo: '/products', pathMatch: 'full' },
       { path: 'contact', component: ContactPageComponent },
-      { path: '', redirectTo: '/contact', pathMatch: 'full' }
+      { path: 'products/:productName', component: ProductsDetailComponent },
+      { path: 'home/products/:productName', component: ProductsDetailComponent},
+      { path: '', redirectTo: '/home', pathMatch: 'full' }, // default redirect
     ])
   ],
   providers: [

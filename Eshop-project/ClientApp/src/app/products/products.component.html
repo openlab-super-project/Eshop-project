@@ -34,16 +34,18 @@
             </div><br />
             <div class="gallery">
                 <ng-container *ngFor="let product of ourFilteredProducts | search: searchText">
+                  <a [routerLink]="['/products', product.productName]" style="color: black; text-decoration:none;">
                     <div class="telescope_1">
-                        <div class="names">
-                            <img [src]="product.productImage0" alt="Telescope + product.productId">
-                            <p>{{ product.productName }}</p>
-                        </div>
-                        <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
-                            <p>{{ product.price }}€</p>
-                            <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
-                        </div>
+                      <div class="names">
+                        <img [src]="product.productImage0" alt="Telescope + product.productId">
+                        <p>{{ product.productName }}</p>
+                      </div>
+                      <div [ngClass]="{'available': product.quantity > 0, 'unavailable': product.quantity <= 0}" class="check">
+                        <p>{{ product.price }}€</p>
+                        <p>{{ product.quantity > 0 ? 'Na sklade' : 'Nie je na sklade' }}</p>
+                      </div>
                     </div>
+                  </a>
                 </ng-container>
             </div>
         </div>
