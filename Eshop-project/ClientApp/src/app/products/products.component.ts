@@ -22,11 +22,9 @@ export class ProductsComponent {
   filterProducts(category: string) {
     this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category);
   }
-
   showAllProducts() {
     this.ourFilteredProducts = this.productData;
   }
-
   filtersProducts() {
     if (!this.searchText) {
       this.ourFilteredProducts = this.productData;
@@ -36,11 +34,6 @@ export class ProductsComponent {
       );
     }
   }
-
-  onSearchChange() {
-    this.filtersProducts();
-  }
-
   onSortChange(event: any) {
     const selectedValue = event.target.value;
     if (selectedValue === 'mostExpensive') {
@@ -54,7 +47,6 @@ export class ProductsComponent {
     }
     // tu ked tak pridat ostatne sorting
   }
-
   private sortData(order: string) {
     if (order === 'lexp') {
       this.ourFilteredProducts.sort((a, b) => a.price - b.price);
@@ -67,7 +59,6 @@ export class ProductsComponent {
     }
   }
 }
-
 export interface ProductsDTO {
   productId: number;
   productName: string;
