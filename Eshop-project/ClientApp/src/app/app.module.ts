@@ -23,7 +23,8 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     NavMenuComponent,
     HomeComponent,
     ProductsComponent,
-    SearchPipe
+    SearchPipe,
+    ProductsDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -12,14 +12,18 @@ export class HomeComponent {
 
   public productData: HomeProductsDTO[] = [];
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, public router: Router ) {
-    http.get<HomeProductsDTO[]>(baseUrl + 'products').subscribe(result => {
-      this.productData = result;
-    }, error => console.error(error));
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private router: Router ) {
+    this.getData();
   }
 
   shopNow() {
     this.router.navigate(['/products']);
+  }
+
+  getData() {
+    this.http.get<HomeProductsDTO[]>(this.baseUrl + 'products').subscribe(result => {
+      this.productData = result;
+    }, error => console.error(error));
   }
 }
 interface HomeProductsDTO {

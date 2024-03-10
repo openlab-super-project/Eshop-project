@@ -13,18 +13,17 @@ export class ProductsComponent {
   searchText: any;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
-    this.http.get<ProductsDTO[]>(this.baseUrl + 'products').subscribe(result => {
-      this.productData = result;
-      this.filtersProducts();
-    }, error => console.error(error));
+    this.getData();
   }
 
   filterProducts(category: string) {
     this.ourFilteredProducts = this.productData.filter(product => product.productCategory === category);
   }
+
   showAllProducts() {
     this.ourFilteredProducts = this.productData;
   }
+
   filtersProducts() {
     if (!this.searchText) {
       this.ourFilteredProducts = this.productData;
@@ -34,6 +33,7 @@ export class ProductsComponent {
       );
     }
   }
+
   onSortChange(event: any) {
     const selectedValue = event.target.value;
     if (selectedValue === 'mostExpensive') {
@@ -47,6 +47,7 @@ export class ProductsComponent {
     }
     // tu ked tak pridat ostatne sorting
   }
+
   private sortData(order: string) {
     if (order === 'lexp') {
       this.ourFilteredProducts.sort((a, b) => a.price - b.price);
@@ -57,6 +58,13 @@ export class ProductsComponent {
     } else if (order === 'asa') {
       this.showAllProducts();
     }
+  }
+
+  getData() {
+    this.http.get<ProductsDTO[]>(this.baseUrl + 'products').subscribe(result => {
+      this.productData = result;
+      this.filtersProducts();
+    }, error => console.error(error));
   }
 }
 export interface ProductsDTO {
