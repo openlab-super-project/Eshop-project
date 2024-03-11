@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPipe } from './products/search.pipe';
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     HomeComponent,
     ProductsComponent,
     SearchPipe,
-    ProductsDetailComponent
+    ProductsDetailComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
