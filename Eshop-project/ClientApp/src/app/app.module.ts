@@ -40,7 +40,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
       { path: 'products', component: ProductsComponent },
       { path: 'contact', component: ContactPageComponent },
       { path: 'products/:productName', component: ProductsDetailComponent },
-      { path: 'home/products/:productName', component: ProductsDetailComponent},
+      { path: 'home/products/:productName', component: ProductsDetailComponent },
+      { path: 'shopping-cart', component: ShoppingCartComponent},
       { path: '', redirectTo: '/home', pathMatch: 'full' }, // default redirect
     ])
   ],

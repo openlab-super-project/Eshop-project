@@ -7,10 +7,10 @@
     </li>
 </ul>
 <ul class="navbar-nav" *ngIf="(isAuthenticated | async) !== true">
+  <li class="nav-item" style="display: flex; justify-content: center; align-items: center;">
+    <a class="nav-link text-dark" [routerLink]='["/shopping-cart"]'><img src="https://cdn-icons-png.freepik.com/512/1413/1413908.png" alt="user" height="25" width="25" /></a>
+  </li>
   <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]='["/authentication/register"]'>Register</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" [routerLink]='["/authentication/login"]'>Login</a>
-    </li>
+    <a class="nav-link text-dark" [routerLink]='["/authentication/login"]'><img src="https://toppng.com/uploads/preview/circled-user-icon-user-pro-icon-11553397069rpnu1bqqup.png" alt="user" height="40" width="40" /></a>
+  </li>
 </ul>
